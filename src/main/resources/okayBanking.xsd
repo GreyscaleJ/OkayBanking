@@ -1,0 +1,30 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://bpc/"
+           targetNamespace="http://bpc/" elementFormDefault="qualified">
+
+    <xs:element name="getAllCardsByClientIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="clientId" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAllCardsByClientIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="cards" maxOccurs="unbounded" type="tns:card"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="card">
+        <xs:sequence>
+            <xs:element name="cardId" type="xs:string"/>
+            <xs:element name="cardNum" type="xs:string"/>
+            <xs:element name="mccCode" type="xs:string"/>
+            <xs:element name="expDate" type="xs:string"/>
+            <xs:element name="cardHolderName" type="xs:string"/>
+            <xs:element name="statusCardId" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
