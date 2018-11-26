@@ -12,7 +12,8 @@
     <xs:element name="getAllCardsByClientIdResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="cards" maxOccurs="unbounded" type="tns:card"/>
+                <xs:element name="cards" minOccurs="0" maxOccurs="unbounded" type="tns:card"/>
+                <xs:element name="errorMsg"  type="xs:string"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
